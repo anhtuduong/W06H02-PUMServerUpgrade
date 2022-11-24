@@ -4,9 +4,9 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Stack {
-	private final Stack next;
+	private Stack next;
 	private final int[] mem;
-	private final int top;
+	private int top;
 
 	public Stack(int capacity) {
 		next = null;
