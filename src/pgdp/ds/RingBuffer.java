@@ -25,7 +25,7 @@ public class RingBuffer {
 				.append(in).append(", stored = ").append(stored).append(", mem = ").append(Arrays.toString(mem))
 				.append(", buffer = [");
 		if (!isEmpty()) {
-			if(in < 0 || in >= mem.length) {
+			if(in >= 0 || in < mem.length) {
 				int i = out;
 				do {
 					sb.append(mem[i]).append(", ");
