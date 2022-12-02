@@ -14,6 +14,18 @@ public class Stack {
 		top = -1;
 	}
 
+	public Stack getNext() {
+		return next;
+	}
+
+	public void setNext(Stack next) {
+		this.next = next;
+	}
+
+	public int getCapacity() {
+		return mem.length;
+	}
+
 	public boolean isEmpty() {
 		return top == -1;
 	}
