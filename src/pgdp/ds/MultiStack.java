@@ -8,7 +8,17 @@ public class MultiStack {
 		stacks = new Stack(1);
 	}
 
-	// TODO implement missing methods
+	public void push(int data) {
+
+	}
+
+	public int top() {
+
+	}
+
+	public int pop() {
+
+	}
 
 	@Override
 	public String toString() {

@@ -14,7 +14,37 @@ public class Stack {
 		top = -1;
 	}
 
-	// TODO implement missing methods
+	public boolean isEmpty() {
+		return top == -1;
+	}
+
+	public boolean isFull() {
+		return top == mem.length - 1;
+	}
+
+	public boolean push(int data) {
+		if (isFull()) {
+			return false;
+		}
+		top++;
+		mem[top] = data;
+		return true;
+	}
+
+	public int top() {
+		if (isEmpty()) {
+			return Integer.MIN_VALUE;
+		}
+		return mem[top];
+	}
+
+	public int pop() {
+		if (isEmpty()) {
+			return Integer.MIN_VALUE;
+		}
+		top--;
+		return mem[top + 1];
+	}
 
 	@Override
 	public String toString() {

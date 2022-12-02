@@ -16,8 +16,6 @@ public class RingBuffer {
 		stored = 0;
 	}
 
-	// TODO implement missing methods
-
 	public boolean isEmpty() {
 		return stored == 0;
 	}
