@@ -18,6 +18,34 @@ public class RingBuffer {
 
 	// TODO implement missing methods
 
+	public boolean isEmpty() {
+		return stored == 0;
+	}
+
+	public boolean isFull() {
+		return in == out;
+	}
+
+	public boolean put(int data) {
+		if (isFull()) {
+			return false;
+		}
+		mem[in] = data;
+		in = (in + 1) % mem.length;
+		stored++;
+		return true;
+	}
+
+	public int get() {
+		if (isEmpty()) {
+			return Integer.MIN_VALUE;
+		}
+		int result = mem[out];
+		out = (out - 1) % mem.length;
+		stored--;
+		return result;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
