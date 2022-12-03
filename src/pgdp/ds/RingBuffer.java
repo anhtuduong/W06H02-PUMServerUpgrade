@@ -21,7 +21,7 @@ public class RingBuffer {
 	}
 
 	public boolean isFull() {
-		return in == out;
+		return stored == mem.length;
 	}
 
 	public boolean put(int data) {
@@ -39,7 +39,10 @@ public class RingBuffer {
 			return Integer.MIN_VALUE;
 		}
 		int result = mem[out];
-		out = (out - 1) % mem.length;
+		out--;
+		if (out == -1) {
+			out = mem.length - 1;
+		}
 		stored--;
 		return result;
 	}
