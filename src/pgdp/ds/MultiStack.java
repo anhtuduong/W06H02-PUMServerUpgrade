@@ -32,15 +32,17 @@ public class MultiStack {
 		if (stacks.isEmpty()) {
 			return Integer.MIN_VALUE;
 		}
-		Stack temp = stacks;
-		while (temp.getNext() != null) {
-			temp = temp.getNext();
+		Stack current = stacks;
+		Stack previous = null;
+		while (current.getNext() != null) {
+			previous = current;
+			current = current.getNext();
 		}
-		int result = temp.pop();
-		if (temp.isEmpty()) {
+		int result = current.pop();
+		if (current.isEmpty()) {
 			// in case temp is the NOT first stack, remove the stack
-			if (temp.getCapacity() != 1) {	// the first stack has capacity of 1
-				temp = null;
+			if (current.getCapacity() != 1) {	// the first stack has capacity of 1
+				previous.setNext(null);
 			}
 		}
 		return result;
