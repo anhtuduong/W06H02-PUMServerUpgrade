@@ -16,6 +16,7 @@ public class MultiStack {
 		if (temp.isFull()) {
 			// create new Stack with double capacity of the previous one
 			temp.setNext(new Stack(temp.getCapacity() * 2));
+			temp = temp.getNext();
 		}
 		temp.push(data);
 	}
