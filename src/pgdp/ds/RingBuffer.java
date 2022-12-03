@@ -38,11 +38,9 @@ public class RingBuffer {
 		if (isEmpty()) {
 			return Integer.MIN_VALUE;
 		}
-		int result = mem[out];
-		out--;
-		if (out == -1) {
-			out = mem.length - 1;
-		}
+		int result = mem[out % mem.length];
+		mem[out] = Integer.MIN_VALUE;
+		out = (out + 1) % mem.length;
 		stored--;
 		return result;
 	}
