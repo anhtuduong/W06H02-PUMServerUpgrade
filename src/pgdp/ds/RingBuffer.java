@@ -39,7 +39,6 @@ public class RingBuffer {
 			return Integer.MIN_VALUE;
 		}
 		int result = mem[out % mem.length];
-		mem[out] = Integer.MIN_VALUE;
 		out = (out + 1) % mem.length;
 		stored--;
 		return result;
